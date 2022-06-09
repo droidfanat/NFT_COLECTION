@@ -13,10 +13,6 @@ module.exports = {
 		'truffle-plugin-verify'
 	  ],
 
-	//   api_keys: {
-	// 	etherscan: 'XP1VZ8XH5VSDMFY45ZCJDVKRC92IZK76PW',
-	// 	bscscan: 'YZV3AVBUKDF47F397BA3QGK2PW4KH3J43A'
-	//   },
 	
 	  api_keys: {
 		etherscan: process.env.ETHERSCAN,
@@ -34,7 +30,7 @@ module.exports = {
 		},
 		ropsten: {
 			provider: function() {
-			  return new HDWalletProvider(MNEMONIC_TESTNET_ROPSTEN, "https://ropsten.infura.io/v3/229978a439f942769dedd0bf53cd3c0f")
+			  return new HDWalletProvider(MNEMONIC_TESTNET_ROPSTEN, "")
 			},
 			network_id: 3,
 			gas: 8000000,        // Ropsten has a lower block limit than mainnetdc
@@ -44,8 +40,6 @@ module.exports = {
 		  },
 		  rinkeby: {
 			provider: function() {
-			  //return new HDWalletProvider(MNEMONIC, "https://rinkeby.infura.io/v3/229978a439f942769dedd0bf53cd3c0f")
-			  //return new HDWalletProvider(MNEMONIC, "https://rinkeby.infura.io/v3/7df8332473fd402ca72ce8d5c3a449c9");
 			  return new HDWalletProvider(MNEMONIC_TESTNET_RINKEBY, "http://192.168.88.254:8545");
 			},
 			network_id: 4,
@@ -77,12 +71,6 @@ module.exports = {
 		   },
 	},
 	mocha: {
-		// reporter: 'eth-gas-reporter',
-		// reporterOptions: {
-		// 	coinmarketcap: '9ddd66f7-a097-4f29-89ef-f75e9afab370',
-		// 	currency: 'USD',
-		// 	gasPrice: 130
-		// }
 	  },
 	compilers: {
 		solc: {
